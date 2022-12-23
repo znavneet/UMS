@@ -742,8 +742,13 @@ namespace AMAT.BIM_UMSWeb
                 // return groupMemebers;
 
             }
-
-
+                //how to use use AD method
+                 public string GetUserFullNameFromAD(string EmpNum)
+                {
+                    ADMethods adObj = new ADMethods();
+                    ADMethods.ADAttributes obj = adObj.GetEmployeeAttributes(EmpNum, ADMethods.AdPrpoertyParameters.employeeid);
+                    return obj.ManagerEmployeeID;         
+                }
 
         }
 
